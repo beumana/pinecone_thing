@@ -1,0 +1,37 @@
+<%= form_for(@dealer) do |f| %>
+  <% if @dealer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dealer.errors.count, "error") %> prohibited this dealer from being saved:</h2>
+
+      <ul>
+      <% @dealer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :zone %><br>
+    <%= f.text_field :zone, class: "form-control" %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :state %><br>
+    <%= f.text_field :state, class: "form-control" %>
+  </div>
+  <div class="field form-group">
+    <%= f.label :description %><br>
+    <%= f.text_field :description, class: "form-control", rows: "5" %>
+  </div>
+  <div class="field form-group">
+    <%= f.label "Photo" %><br>
+    <%= f.file_field :avatar %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

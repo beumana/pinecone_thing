@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<%= render 'nav' %>
+
+<h1>All Pinecone Dealers</h1>
+
+  <div class="row">
+    <% @dealers.each do |dealer| %>
+      <div class="col-md-4">
+       <div class="panel panel-default">
+        <div class="panel-body">
+         <h2><%= dealer.name %></h2>
+         <h2><%= dealer.zone %></h2>
+         <h3<%= dealer.state %></h3>
+         <p><%= dealer.description %></p>
+            <%= image_tag dealer.avatar.url(:thumb), class: "img-responsive" %>
+            
+            
+         <div class="btn-group">
+          <%= link_to 'Show', dealer, class: "btn btn-default" %>
+          <%= link_to 'Edit', edit_dealer_path(dealer), class: "btn btn-default" %>
+          <%= link_to 'Destroy', dealer, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+         </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+<br>
+
+<%= link_to 'New Dealer', new_dealer_path %>

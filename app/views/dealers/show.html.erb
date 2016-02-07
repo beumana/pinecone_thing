@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @dealer.name %>
+</p>
+
+<p>
+  <strong>Zone:</strong>
+  <%= @dealer.zone %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @dealer.state %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @dealer.description %>
+</p>
+
+<%= image_tag @dealer.avatar.url(:thumb) %>
+
+<%= link_to 'Edit', edit_dealer_path(@dealer) %> |
+<%= link_to 'Back', dealers_path %>
