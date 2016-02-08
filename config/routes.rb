@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  get 'home' => 'welcome#index'
+  get 'home' => 'welcome#windex'
 
   get 'about' => 'welcome#about'
   
-  root 'welcome#index'
+  root 'welcome#windex'
 
   resources :dealers
   # The priority is based upon order of creation: first created -> highest priority.
